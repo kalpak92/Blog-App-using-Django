@@ -1,6 +1,8 @@
 from django.shortcuts import render
 #from django.http import HttpResponse
+from .models import Post
 
+'''
 posts = [
     {
         'author': 'KalpakSeal',
@@ -15,10 +17,10 @@ posts = [
         'date_posted': 'October 5, 2019'
     }
 ]
-
+'''
 def home(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request, 'blog/home.html', context)
     # return HttpResponse('<h1>Blog Home</h1>')
